@@ -1,0 +1,8 @@
+<nav class="main-navigation">
+	<h2 class="screen-reader-text">Main navigation</h2>
+	<ul class="menu">
+		{{#foreach navigation}}
+		<li class="menu-item {{slug}}{{#if current}} current-menu-item{{/if}}" role="presentation"><a href="{{url absolute="true"}}">{{label}}</a></li>
+		{{/foreach}}
+	</ul><!-- .menu -->
+</nav><!-- .main-navigation -->

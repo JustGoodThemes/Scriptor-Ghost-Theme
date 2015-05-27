@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		{{! Document Settings }}
+		<meta charset="utf-8">
+
+		{{! Page Meta }}
+		<title>{{meta_title}}</title>
+		<meta name="description" content="{{meta_description}}" />
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		{{! Styles }}
+		<link rel="stylesheet" type="text/css" href="{{asset "css/style.css"}}" />
+		<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Droid+Serif:400,400italic,700,700italic%7CLato:400,400italic,700,700italic" />
+
+		{{! Ghost outputs important style and meta data with this tag }}
+		{{ghost_head}}
+	</head>
+	<body class="{{body_class}}">		
+		<div id="page" class="inner">
+			{{! Everything else gets inserted here }}
+			{{{body}}}
+		</div><!-- .inner -->
+
+		{{! Ghost outputs important scripts and data with this tag }}
+		{{ghost_foot}}
+
+		{{! JavaScript files }}
+		<script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
+    	<script type="text/javascript" src="{{asset "js/custom.js"}}"></script>
+	</body>
+</html>

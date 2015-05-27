@@ -1,0 +1,10 @@
+<header class="site-header" role="banner">
+    {{#if @blog.logo}}
+    <h1 class="site-title"><a href="{{@blog.url}}"><img src="{{@blog.logo}}" /></a></h1>
+    {{else}}
+    <h1 class="site-title"><a href="{{@blog.url}}">{{@blog.title}}</a></h1>
+    {{/if}}
+    {{#if @blog.navigation}}
+        {{navigation}}
+    {{/if}}
+</header><!-- .site-header -->

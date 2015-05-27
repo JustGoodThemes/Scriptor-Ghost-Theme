@@ -1,0 +1,24 @@
+{{!< default}}
+{{! The tag above means - insert everything in this file into the {body} of the default.hbs template }}
+
+{{! The tag below includes the blog header - partials/header.hbs }}
+{{> header}}
+
+{{! Blog description displayed on the homepage }}
+<div class="site-description">
+	<p>{{@blog.description}}</p>
+</div><!-- .site-description -->
+
+{{! The main content area on the homepage }}
+<main class="main-content" role="main">
+
+	{{! The tag below includes the post loop - partials/loop.hbs }}
+	{{> "loop"}}
+
+	{{! Previous/next page links - displayed on every page }}
+	{{pagination}}
+
+</main><!-- .main-content -->
+
+{{! The tag below includes the theme footer - partials/footer.hbs }}
+{{> footer}}

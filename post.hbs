@@ -1,0 +1,64 @@
+{{!< default}}
+{{! The tag above means - insert everything in this file into the {body} of the default.hbs template }}
+
+{{! The tag below includes the blog header - partials/header.hbs }}
+{{> header}}
+
+<main class="main-content" role="main">
+
+	{{! Everything inside the #post tags pulls data from the post }}
+	{{#post}}
+	<article class="{{post_class}}" role="article">
+		<header class="post-header">
+			{{#if featured}}
+			<span class="featured-post">&darr; Featured</span>
+			{{/if}}
+			<time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
+			<h1 class="post-title">{{title}}</h1>
+			<div class="post-meta">
+				Posted by {{author}} {{tags prefix=" in "}}
+			</div><!-- .post-meta -->
+			{{#if image }}
+				<div class="post-thumbnail"><img src="{{image}}" alt="{{title}}" /></div>
+			{{/if}}
+		</header><!-- .post-header -->
+		<div class="post-content">
+			{{content}}
+		</div><!-- .post-content -->
+		<div class="share-post">
+			<span>Share this post:</span>
+			<a target="_blank" href="http://twitter.com/share?text={{encode title}}&amp;url={{url absolute="true"}}">Twitter</a>
+			<a target="_blank" href="http://wwww.facebook.com/sharer.php?u={{url absolute="true"}}">Facebook</a>
+			<a target="_blank" href="http://plus.google.com/share?url={{url absolute="true"}}">Google+</a>
+		</div><!-- .share-post -->
+		{{#author}}
+		<div class="author-box">
+			{{#if image}}
+			<a class="author-avatar" href="{{@blog.url}}/author/{{slug}}" style="background-image: url({{image}})"><span class="screen-reader-text">{{name}}&#39;s Picture</span></a>
+			{{/if}}
+			<div class="author-details">
+				<h4 class="author-title">About <a href="{{url}}">{{name}}</a></h4>
+				{{#if bio}}
+				<p class="author-bio">{{bio}}</p>
+				{{/if}}
+				<div class="author-meta">
+					{{#if location}}
+					<span class="author-location">{{location}}</span>
+					{{/if}}
+					{{#if website}}
+					<span class="author-website"><a href="{{website}}" target="_blank">{{website}}</a></span>
+					{{/if}}
+				</div><!-- .author-meta -->
+			</div><!-- .author-details -->
+		</div><!-- .author-box -->
+		{{/author}}
+	</article>
+	{{/post}}
+
+	{{! The tag below includes the theme comments - partials/comments.hbs }}
+	{{> comments}}
+
+</main><!-- .main-content -->
+
+{{! The tag below includes the theme footer - partials/footer.hbs }}
+{{> footer}}
