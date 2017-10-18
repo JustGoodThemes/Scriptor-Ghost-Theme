@@ -1,0 +1,22 @@
+<footer class="site-footer">
+	<div class="offsite-links">
+		{{#if @blog.twitter}}
+		<a class="twitter-link" href="{{twitter_url}}" target="_blank"><span class="icon-twitter" aria-hidden="true"></span><span class="screen-reader-text">Twitter</span></a>
+		{{/if}}
+		{{#if @blog.facebook}}
+		<a class="facebook-link" href="{{facebook_url}}" target="_blank"><span class="icon-facebook" aria-hidden="true"></span><span class="screen-reader-text">Facebook</span></a>
+		{{/if}}
+		<a class="google-link" href="#" target="_blank"><span class="icon-google-plus" aria-hidden="true"></span><span class="screen-reader-text">Google+</span></a>
+		<a class="github-link" href="#" target="_blank"><span class="icon-github" aria-hidden="true"></span><span class="screen-reader-text">GitHub</span></a>
+		<a class="instagram-link" href="#" target="_blank"><span class="icon-instagram" aria-hidden="true"></span><span class="screen-reader-text">Instagram</span></a>
+		<a class="pinterest-link" href="#" target="_blank"><span class="icon-pinterest" aria-hidden="true"></span><span class="screen-reader-text">Pinterest</span></a>
+		<a class="rss-link" href="{{ @blog.url }}/rss"><span class="icon-rss" aria-hidden="true"></span><span class="screen-reader-text">RSS Feed</span></a>
+	</div><!-- .offsite-links -->
+	<div class="footer-bottom">
+		<div class="site-info">
+			&copy; {{date format="YYYY"}} <a href="/">{{@blog.title}}</a>.<br />
+			Powered by <a target="_blank" href="https://ghost.org/">Ghost</a>. Scriptor theme by <a target="_blank" href="https://justgoodthemes.com/">JustGoodThemes</a>.
+		</div><!-- .site-info -->
+		<a href="#page" id="back-to-top" class="back-to-top"><span class="screen-reader-text">Back to the top </span>&#8593;</a>
+	</div><!-- .footer-bottom -->
+</footer><!-- .site-footer -->

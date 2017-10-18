@@ -1,0 +1,20 @@
+{
+  "name": "scriptor",
+  "description": "Minimal Ghost blogging theme for writers.",
+  "version": "1.3.0",
+  "engines": {
+    "ghost": ">=1.0.0"
+  },
+  "screenshots": {
+    "desktop": "assets/screenshot-desktop.jpg",
+    "mobile": "assets/screenshot-mobile.jpg"
+  },
+  "author": {
+    "name": "Just Good Themes",
+    "email": "hello@justgoodthemes.com",
+    "url": "https://justgoodthemes.com"
+  },
+  "config": {
+    "posts_per_page": 6
+  }
+}
