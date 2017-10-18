@@ -1,14 +1,12 @@
 {{!< default}}
-{{! The tag above means - insert everything in this file into the {body} of the default.hbs template }}
+{{!-- The tag above means - insert everything in this file into the {body} of the default.hbs template --}}
 
-{{! The tag below includes the blog header - partials/header.hbs }}
-{{> header}}
+{{!-- The main content area on the static page --}}
+<main class="main-content">
 
-<main class="main-content" role="main">
-
-	{{! Everything inside the #post tags pulls data from the page }}
+	{{!-- Everything inside the #post tags pulls data from the page --}}
 	{{#post}}
-	<article class="{{post_class}}" role="article">
+	<article class="{{post_class}}">
 		<header class="post-header">
 			<h1 class="post-title">{{title}}</h1>
 			{{#if tags}}
@@ -16,8 +14,8 @@
 				{{tags prefix="Posted in "}}
 			</div><!-- .post-meta -->
 			{{/if}}
-			{{#if image }}
-				<div class="post-thumbnail"><img src="{{image}}" alt="{{title}}" /></div>
+			{{#if feature_image}}
+			<div class="post-thumbnail"><img src="{{feature_image}}" alt="{{title}}" /></div>
 			{{/if}}
 		</header><!-- .post-header -->
 		<div class="post-content">
@@ -27,6 +25,3 @@
 	{{/post}}
 
 </main><!-- .main-content -->
-
-{{! The tag below includes the theme footer - partials/footer.hbs }}
-{{> footer}}

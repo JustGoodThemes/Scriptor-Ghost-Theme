@@ -4,12 +4,19 @@
 
 /*globals jQuery, document */
 (function ($) {
-    "use strict";
+	"use strict";
 
-    $(document).ready(function(){
+	$(document).ready(function(){
 
-        $(".post-content").fitVids();
+		// Responsive video embeds
+		$(".post-content").fitVids();
 
-    });
+		// Scroll to top
+		$('#back-to-top').on('click', function(e) {
+			$('html, body').animate({'scrollTop': 0});
+			e.preventDefault();
+		});
+
+	});
 
 }(jQuery));

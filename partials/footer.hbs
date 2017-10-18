@@ -1,15 +1,22 @@
 <footer class="site-footer">
 	<div class="offsite-links">
-	    <a class="twitter-link" href="http://www.twitter.com/{{! Add Twitter handle }}"><i class="icon-twitter"></i></a>
-	    <a class="facebook-link" href="https://www.facebook.com/{{! Add Facebook handle }}"><i class="icon-facebook"></i></a>
-	    <a class="github-link" href="https://github.com/{{! Add GitHub handle }}"><i class="icon-github-alt"></i></a>
-	    <a class="google-link" href="https://plus.google.com/{{! Add Google+ handle }}"><i class="icon-google-plus"></i></a>
-	     <a class="instagram-link" href="https://instagram.com/{{! Add Instagram handle }}"><i class="icon-instagram"></i></a>
-	    <a class="rss-link" href="{{ @blog.url }}/rss"><i class="icon-rss"></i></a>
+		{{#if @blog.twitter}}
+		<a class="twitter-link" href="{{twitter_url}}" target="_blank"><span class="icon-twitter" aria-hidden="true"></span><span class="screen-reader-text">Twitter</span></a>
+		{{/if}}
+		{{#if @blog.facebook}}
+		<a class="facebook-link" href="{{facebook_url}}" target="_blank"><span class="icon-facebook" aria-hidden="true"></span><span class="screen-reader-text">Facebook</span></a>
+		{{/if}}
+		<a class="google-link" href="#" target="_blank"><span class="icon-google-plus" aria-hidden="true"></span><span class="screen-reader-text">Google+</span></a>
+		<a class="github-link" href="#" target="_blank"><span class="icon-github" aria-hidden="true"></span><span class="screen-reader-text">GitHub</span></a>
+		<a class="instagram-link" href="#" target="_blank"><span class="icon-instagram" aria-hidden="true"></span><span class="screen-reader-text">Instagram</span></a>
+		<a class="pinterest-link" href="#" target="_blank"><span class="icon-pinterest" aria-hidden="true"></span><span class="screen-reader-text">Pinterest</span></a>
+		<a class="rss-link" href="{{ @blog.url }}/rss"><span class="icon-rss" aria-hidden="true"></span><span class="screen-reader-text">RSS Feed</span></a>
 	</div><!-- .offsite-links -->
-	<div class="site-info">
-		&copy; <a href="/">{{@blog.title}}</a> all rights reserved.<br />
-		Powered by <a target="_blank" href="http://www.ghost.org">Ghost</a>. Scriptor theme by <a target="_blank" href="http://justgoodthemes.com/">JustGoodThemes</a>
-	</div><!-- .site-info -->
-	<a href="#page" class="back-to-top" title="Back to Top">&#8593;</a>
+	<div class="footer-bottom">
+		<div class="site-info">
+			&copy; {{date format="YYYY"}} <a href="/">{{@blog.title}}</a>.<br />
+			Powered by <a target="_blank" href="https://ghost.org/">Ghost</a>. Scriptor theme by <a target="_blank" href="https://justgoodthemes.com/">JustGoodThemes</a>.
+		</div><!-- .site-info -->
+		<a href="#page" id="back-to-top" class="back-to-top"><span class="screen-reader-text">Back to the top </span>&#8593;</a>
+	</div><!-- .footer-bottom -->
 </footer><!-- .site-footer -->

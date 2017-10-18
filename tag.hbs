@@ -1,27 +1,25 @@
 {{!< default}}
-{{! The tag above means - insert everything in this file into the {body} of the default.hbs template }}
+{{!-- The tag above means - insert everything in this file into the {body} of the default.hbs template --}}
 
-{{! The tag below includes the blog header - partials/header.hbs }}
-{{> header}}
-
-<main class="main-content" role="main">
+{{!-- The main content area on the tag page --}}
+<main class="main-content">
 	<section>
-		
+
+		{{!-- Everything inside the #tag tags pulls data from the tag --}}
+		{{#tag}}
 		<header class="page-header">
-			<h1 class="page-title">All posts in <span class="highlight">{{tag.name}}</span></h1>
-			{{#if tag.description}}
-			<p class="page-description">{{tag.description}}</p>
+			<h1 class="page-title">{{plural ../pagination.total empty='No posts' singular='% post' plural='% posts'}} in <span class="highlight">{{name}}</span></h1>
+			{{#if description}}
+			<p class="page-description">{{description}}</p>
 			{{/if}}
 		</header><!-- .page-header -->
+		{{/tag}}
 
-		{{! The tag below includes the post loop - partials/loop.hbs }}
+		{{!-- The tag below includes the post loop - partials/loop.hbs --}}
 		{{> "loop"}}
 
-		{{! Previous/next page links - displayed on every page }}
+		{{!-- Previous/next page links - displayed on every page --}}
 		{{pagination}}
 
 	</section>
 </main><!-- .main-content -->
-
-{{! The tag below includes the theme footer - partials/footer.hbs }}
-{{> footer}}
