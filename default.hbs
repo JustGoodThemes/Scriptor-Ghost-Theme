@@ -25,13 +25,13 @@
 			{{> footer}}
 		</div><!-- .inner -->
 
-		{{!-- jQuery library --}}
-		<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+		{{!-- Scripts --}}
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+		<script src="{{asset "js/jquery.fitvids.js"}}"></script>
+		<script src="{{asset "js/custom.js"}}"></script>
+
 		{{!-- Ghost outputs important scripts and data with this tag --}}
 		{{ghost_foot}}
 
-		{{!-- JavaScript files --}}
-		<script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
-		<script type="text/javascript" src="{{asset "js/custom.js"}}"></script>
 	</body>
 </html>
