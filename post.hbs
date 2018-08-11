@@ -14,7 +14,7 @@
 			<time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
 			<h1 class="post-title">{{title}}</h1>
 			<div class="post-meta">
-				Posted by {{author}} {{tags prefix=" in "}}
+				Posted by {{authors}} {{tags prefix=" in "}}
 			</div><!-- .post-meta -->
 			{{#if feature_image}}
 			<div class="post-thumbnail"><img src="{{feature_image}}" alt="{{title}}" /></div>
@@ -29,34 +29,36 @@
 			<a target="_blank" href="https://www.facebook.com/sharer.php?u={{url absolute="true"}}">Facebook</a>
 			<a target="_blank" href="https://plus.google.com/share?url={{url absolute="true"}}">Google+</a>
 		</div><!-- .share-post -->
-		{{!-- Everything inside the #author tags pulls data from the author --}}
-		{{#author}}
-		<div class="author-box{{^if profile_image}} no-avatar{{/if}}">
-			{{#if profile_image}}
-			<a class="author-avatar" href="{{@blog.url}}/author/{{slug}}" style="background-image: url({{profile_image}})"><span class="screen-reader-text">{{name}}&#39;s Picture</span></a>
-			{{/if}}
-			<div class="author-details">
-				<h2 class="author-title">About <a href="{{url}}">{{name}}</a></h2>
-				{{#if bio}}
-				<p class="author-bio">{{bio}}</p>
+		<div class="author-list">
+			<div class="author-list-title">Written by</div>
+			{{#foreach authors}}
+			<div class="author-box{{^if profile_image}} no-avatar{{/if}}">
+				{{#if profile_image}}
+				<a class="author-avatar" href="{{@blog.url}}/author/{{slug}}" style="background-image: url({{profile_image}})"><span class="screen-reader-text">{{name}}&#39;s Picture</span></a>
 				{{/if}}
-				<div class="author-meta">
-					{{#if location}}
-					<span class="author-location">{{location}}</span>
+				<div class="author-details">
+					<h2 class="author-title">About <a href="{{url}}">{{name}}</a></h2>
+					{{#if bio}}
+					<p class="author-bio">{{bio}}</p>
 					{{/if}}
-					{{#if website}}
-					<span class="author-website"><a href="{{website}}" target="_blank">{{website}}</a></span>
-					{{/if}}
-					{{#if facebook}}
-					<span class="author-facebook"><a href="{{facebook_url}}" target="_blank">Facebook</a></span>
-					{{/if}}
-					{{#if twitter}}
-					<span class="author-twitter"><a href="{{twitter_url}}" target="_blank">Twitter</a></span>
-					{{/if}}
-				</div><!-- .author-meta -->
-			</div><!-- .author-details -->
-		</div><!-- .author-box -->
-		{{/author}}
+					<div class="author-meta">
+						{{#if location}}
+						<span class="author-location">{{location}}</span>
+						{{/if}}
+						{{#if website}}
+						<span class="author-website"><a href="{{website}}" target="_blank">{{website}}</a></span>
+						{{/if}}
+						{{#if facebook}}
+						<span class="author-facebook"><a href="{{facebook_url}}" target="_blank">Facebook</a></span>
+						{{/if}}
+						{{#if twitter}}
+						<span class="author-twitter"><a href="{{twitter_url}}" target="_blank">Twitter</a></span>
+						{{/if}}
+					</div><!-- .author-meta -->
+				</div><!-- .author-details -->
+			</div><!-- .author-box -->
+			{{/foreach}}
+		</div><!-- .author-list -->
 	</article>
 	{{/post}}
 
