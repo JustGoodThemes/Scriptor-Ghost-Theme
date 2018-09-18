@@ -1,7 +1,5 @@
 # Scriptor
 
-[![Ghost version](https://img.shields.io/badge/Ghost-v1.x.x-brightgreen.svg?style=flat-square)](https://github.com/TryGhost/Ghost)
-
 Scriptor is a minimal, clean, modern & responsive Ghost theme for writers.
 
 See a live demo of Scriptor [here](https://scriptor-ghost.herokuapp.com).
@@ -36,4 +34,4 @@ You will find all copyright information in the `<div>` with the class **"site-in
 
 ## Copyright & License
 
-Copyright (c) 2015-2017 Just Good Themes - Released under the [MIT license](LICENSE).
+Copyright (c) 2015-2018 Just Good Themes - Released under the [MIT license](LICENSE).

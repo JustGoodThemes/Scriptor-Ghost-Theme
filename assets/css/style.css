@@ -536,8 +536,68 @@ video {
   max-width: 100%;
 }
 
-.fluid-width-video-wrapper {
+.fluid-width-video-wrapper,
+.kg-embed-card,
+.kg-image-card,
+.kg-gallery-card {
   margin: 0 0 1.66667em;
+}
+
+.kg-embed-card > .fluid-width-video-wrapper {
+  margin: 0;
+}
+
+.kg-gallery-container {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  max-width: 880px;
+}
+
+.kg-gallery-row {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.kg-gallery-row:not(:first-of-type) {
+  margin: 5px 0 0;
+}
+
+.kg-gallery-image:not(:first-of-type) {
+  margin: 0 0 0 5px;
+}
+
+.kg-gallery-image img {
+  display: block;
+  height: 100%;
+  margin: 0;
+  width: 100%;
+}
+
+.kg-image-card figcaption,
+.kg-embed-card figcaption {
+  color: #9ba6ad;
+  font-size: 0.77778rem;
+  padding-top: 0.5em;
+  text-align: left;
+}
+
+.footnotes-sep {
+  clear: both;
+}
+
+.footnotes-list {
+  font-size: 0.77778rem;
+  line-height: 1.5;
+}
+
+.footnote-item p {
+  margin-bottom: 0.5em;
 }
 
 /* Clearing floats */
@@ -968,6 +1028,31 @@ a.back-to-top:hover {
   }
 }
 
+@media only screen and (min-width: 851px) {
+  .kg-gallery-card,
+  .kg-width-full .kg-image,
+  .kg-width-wide .kg-image {
+    margin-left: calc(425px - 50vw);
+    margin-right: calc(425px - 50vw);
+  }
+  .kg-width-full .kg-image,
+  .kg-width-wide .kg-image {
+    max-width: none;
+    width: calc(100vw - 90px);
+  }
+}
+
+@media only screen and (min-width: 971px) {
+  .kg-gallery-card,
+  .kg-width-wide .kg-image {
+    margin-left: -60px;
+    margin-right: -60px;
+  }
+  .kg-width-wide .kg-image {
+    width: 880px;
+  }
+}
+
 @media only screen and (max-width: 910px) {
   blockquote {
     margin-left: 0;
@@ -1083,5 +1168,16 @@ a.back-to-top:hover {
     display: inline-block;
     margin: 1.25em 0 0;
     position: static;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .kg-gallery-card .kg-gallery-row {
+    -ms-flex-direction: column;
+    flex-direction: column;
+    margin: 0;
+  }
+  .kg-gallery-row .kg-gallery-image {
+    margin: 0 0 5px;
   }
 }

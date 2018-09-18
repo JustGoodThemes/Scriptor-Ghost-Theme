@@ -2,9 +2,11 @@
 {{!-- The tag above means - insert everything in this file into the {body} of the default.hbs template --}}
 
 {{!-- Blog description displayed on the homepage --}}
+{{#if @blog.description}}
 <div class="site-description">
 	<p>{{@blog.description}}</p>
 </div><!-- .site-description -->
+{{/if}}
 
 {{!-- The main content area on the blog page --}}
 <main class="main-content">

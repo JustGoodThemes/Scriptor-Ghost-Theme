@@ -14,7 +14,7 @@
 			<time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
 			<h1 class="post-title">{{title}}</h1>
 			<div class="post-meta">
-				Posted by {{author}} {{tags prefix=" in "}}
+				Posted by {{#primary_author}}<a href="{{url}}">{{name}}</a>{{/primary_author}} {{tags prefix=" in "}}
 			</div><!-- .post-meta -->
 			{{#if feature_image}}
 			<div class="post-thumbnail"><img src="{{feature_image}}" alt="{{title}}" /></div>
@@ -30,7 +30,7 @@
 			<a target="_blank" href="https://plus.google.com/share?url={{url absolute="true"}}">Google+</a>
 		</div><!-- .share-post -->
 		{{!-- Everything inside the #author tags pulls data from the author --}}
-		{{#author}}
+		{{#primary_author}}
 		<div class="author-box{{^if profile_image}} no-avatar{{/if}}">
 			{{#if profile_image}}
 			<a class="author-avatar" href="{{@blog.url}}/author/{{slug}}" style="background-image: url({{profile_image}})"><span class="screen-reader-text">{{name}}&#39;s Picture</span></a>
@@ -56,7 +56,7 @@
 				</div><!-- .author-meta -->
 			</div><!-- .author-details -->
 		</div><!-- .author-box -->
-		{{/author}}
+		{{/primary_author}}
 	</article>
 	{{/post}}
 
