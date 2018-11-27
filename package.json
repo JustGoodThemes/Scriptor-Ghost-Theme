@@ -1,7 +1,7 @@
 {
-  "name": "scriptor",
+  "name": "scriptor-modified",
   "description": "Minimal Ghost blogging theme for writers.",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "engines": {
     "ghost": ">=2.1.0"
   },
@@ -10,9 +10,9 @@
     "mobile": "assets/screenshot-mobile.jpg"
   },
   "author": {
-    "name": "Just Good Themes",
-    "email": "hello@justgoodthemes.com",
-    "url": "https://justgoodthemes.com"
+    "name": "Richo Han",
+    "email": "chenghsien.richo@gmail.com",
+    "url": "https://richo.tw"
   },
    "keywords": [
     "ghost",
