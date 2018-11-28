@@ -2,9 +2,9 @@
 
 Scriptor is a minimal, clean, modern & responsive Ghost theme for writers.
 
-See a live demo of Scriptor [here](https://scriptor-ghost.herokuapp.com).
+See a live demo of Scriptor [here](https://scriptor.justgoodthemes.com/).
 
-[![Scriptor showcase](assets/scriptor-preview.png)](https://scriptor-ghost.herokuapp.com)
+[![Scriptor showcase](assets/scriptor-preview.png)](https://scriptor.justgoodthemes.com/)
 
 ## Disqus Comments
 
