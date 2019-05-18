@@ -25,15 +25,14 @@
 		</div><!-- .post-content -->
 		<div class="share-post">
 			<span>Share this post:</span>
-			<a target="_blank" href="https://twitter.com/intent/tweet?text={{encode title}}&amp;url={{url absolute="true"}}">Twitter</a>
-			<a target="_blank" href="https://www.facebook.com/sharer.php?u={{url absolute="true"}}">Facebook</a>
-			<a target="_blank" href="https://plus.google.com/share?url={{url absolute="true"}}">Google+</a>
+			<a target="_blank" href="https://twitter.com/intent/tweet?text={{encode title}}&amp;url={{url absolute="true"}}" rel="noopener">Twitter</a>
+			<a target="_blank" href="https://www.facebook.com/sharer.php?u={{url absolute="true"}}" rel="noopener">Facebook</a>
 		</div><!-- .share-post -->
 		{{!-- Everything inside the #author tags pulls data from the author --}}
 		{{#primary_author}}
 		<div class="author-box{{^if profile_image}} no-avatar{{/if}}">
 			{{#if profile_image}}
-			<a class="author-avatar" href="{{@blog.url}}/author/{{slug}}" style="background-image: url({{profile_image}})"><span class="screen-reader-text">{{name}}&#39;s Picture</span></a>
+			<a class="author-avatar" href="{{url}}" style="background-image: url({{profile_image}})"><span class="screen-reader-text">{{name}}&#39;s Picture</span></a>
 			{{/if}}
 			<div class="author-details">
 				<h2 class="author-title">About <a href="{{url}}">{{name}}</a></h2>
@@ -45,13 +44,13 @@
 					<span class="author-location">{{location}}</span>
 					{{/if}}
 					{{#if website}}
-					<span class="author-website"><a href="{{website}}" target="_blank">{{website}}</a></span>
+					<span class="author-website"><a href="{{website}}" target="_blank" rel="noopener">{{website}}</a></span>
 					{{/if}}
 					{{#if facebook}}
-					<span class="author-facebook"><a href="{{facebook_url}}" target="_blank">Facebook</a></span>
+					<span class="author-facebook"><a href="{{facebook_url}}" target="_blank" rel="noopener">Facebook</a></span>
 					{{/if}}
 					{{#if twitter}}
-					<span class="author-twitter"><a href="{{twitter_url}}" target="_blank">Twitter</a></span>
+					<span class="author-twitter"><a href="{{twitter_url}}" target="_blank" rel="noopener">Twitter</a></span>
 					{{/if}}
 				</div><!-- .author-meta -->
 			</div><!-- .author-details -->

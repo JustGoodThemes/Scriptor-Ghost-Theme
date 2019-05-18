@@ -34,4 +34,4 @@ You will find all copyright information in the `<div>` with the class **"site-in
 
 ## Copyright & License
 
-Copyright (c) 2015-2018 Just Good Themes - Released under the [MIT license](LICENSE).
+Copyright (c) 2015-2019 Just Good Themes - Released under the [MIT license](LICENSE).
