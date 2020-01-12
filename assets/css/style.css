@@ -539,7 +539,8 @@ video {
 .fluid-width-video-wrapper,
 .kg-embed-card,
 .kg-image-card,
-.kg-gallery-card {
+.kg-gallery-card,
+.kg-bookmark-card {
   margin: 0 0 1.66667em;
 }
 
@@ -580,11 +581,102 @@ video {
 }
 
 .kg-image-card figcaption,
-.kg-embed-card figcaption {
+.kg-embed-card figcaption,
+.kg-bookmark-card figcaption {
   color: #9ba6ad;
   font-size: 0.77778rem;
   padding-top: 0.5em;
   text-align: left;
+}
+
+.kg-bookmark-card {
+  width: 100%;
+  position: relative;
+}
+
+.kg-bookmark-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row-reverse;
+  color: currentColor;
+  font-family: inherit;
+  text-decoration: none;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+}
+
+.kg-bookmark-container:hover {
+  text-decoration: none;
+}
+
+.kg-bookmark-content {
+  flex-basis: 0;
+  flex-grow: 999;
+  padding: 20px;
+  order: 1;
+}
+
+.kg-bookmark-title {
+  font-family: 'Droid Serif',Georgia,serif;
+  font-weight: bold;
+  line-height: 1.33333;
+  text-rendering: optimizeLegibility;
+}
+
+.kg-bookmark-metadata,
+.kg-bookmark-description {
+  margin-top: .5em;
+}
+
+.kg-bookmark-metadata {
+  align-items: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.kg-bookmark-description {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  font-size: 0.88889em;
+}
+
+.kg-bookmark-icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  vertical-align: text-bottom;
+  margin-right: .5em;
+  margin-bottom: .05em;
+}
+
+.kg-bookmark-thumbnail {
+  display: flex;
+  flex-basis: 24rem;
+  flex-grow: 1;
+}
+
+.kg-bookmark-thumbnail img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+  object-fit: cover;
+  border-radius: 0 3px 3px 0;
+}
+
+.kg-bookmark-author, .kg-bookmark-publisher {
+  font-size: 0.88889em;
+  font-weight: bold;
+}
+
+.kg-bookmark-author {
+  display: none;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  color: #9ba6ad;
 }
 
 .footnotes-sep {
