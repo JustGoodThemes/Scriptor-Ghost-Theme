@@ -21,5 +21,8 @@
   ],
   "config": {
     "posts_per_page": 6
+  },
+  "engines": {
+    "ghost-api": "v3"
   }
 }
