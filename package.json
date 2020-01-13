@@ -1,7 +1,7 @@
 {
-  "name": "scriptor",
+  "name": "scriptor-herlifeinpixels",
   "description": "Minimal Ghost blogging theme for writers.",
-  "version": "1.4.1",
+  "version": "1.5.0",
   "engines": {
     "ghost": ">=2.22.0"
   },
@@ -14,6 +14,13 @@
     "email": "hello@justgoodthemes.com",
     "url": "https://justgoodthemes.com"
   },
+  "contributors": [
+    {
+      "name": "Hannah Wei",
+      "email": "hannah@herlifeinpixels.com",
+      "url": "https://herlifeinpixels.com"
+    } 
+  ],
    "keywords": [
     "ghost",
     "theme",
