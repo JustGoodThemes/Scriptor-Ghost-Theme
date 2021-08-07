@@ -1,25 +1,32 @@
 {
-  "name": "scriptor",
-  "description": "Minimal Ghost blogging theme for writers.",
-  "version": "1.4.1",
-  "engines": {
-    "ghost": ">=2.22.0"
-  },
-  "screenshots": {
-    "desktop": "assets/screenshot-desktop.jpg",
-    "mobile": "assets/screenshot-mobile.jpg"
-  },
-  "author": {
-    "name": "Just Good Themes",
-    "email": "hello@justgoodthemes.com",
-    "url": "https://justgoodthemes.com"
-  },
-   "keywords": [
-    "ghost",
-    "theme",
-    "ghost-theme"
-  ],
-  "config": {
-    "posts_per_page": 6
-  }
+    "name": "scriptor",
+    "description": "A minimal Ghost blogging theme for writers",
+    "demo": "https://scriptor.justgoodthemes.com/",
+    "version": "2.0.0",
+    "engines": {
+        "ghost": ">=4.0.0",
+        "ghost-api": "v4"
+    },
+    "license": "MIT",
+    "screenshots": {
+        "desktop": "assets/screenshot-desktop.jpg",
+        "mobile": "assets/screenshot-mobile.jpg"
+    },
+    "author": {
+        "name": "Just Good Themes",
+        "email": "hello@justgoodthemes.com",
+        "url": "https://justgoodthemes.com"
+    },
+    "keywords": [
+        "ghost",
+        "theme",
+        "ghost-theme"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/JustGoodThemes/Scriptor-Ghost-Theme.git"
+    },
+    "config": {
+        "posts_per_page": 6
+    }
 }

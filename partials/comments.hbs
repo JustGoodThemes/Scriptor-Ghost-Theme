@@ -1,22 +1,19 @@
-<section class="comments-area">
-	<h2 class="comments-title">Comments</h2>
-	<div class="column-large">
-		<div id="disqus_thread"></div>
-		<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus</a>.</noscript>
-	</div><!-- .column-large -->
-</section><!-- .comments-area -->
+<section class="comments">
+    <h2 class="comments-title">Comments</h2>
+    <div id="disqus_thread"></div>
+</section>
 
-{{! Change your Disqus shortname below }}
 <script>
-	var disqus_shortname = 'my_disqus_shortname';
-	var disqus_config = function () {
-		this.page.url = '{{url absolute="true"}}';
-		this.page.identifier = 'ghost-{{comment_id}}';
-	};
-	(function() {
-		var d = document, s = d.createElement('script');
-		s.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
-		s.setAttribute('data-timestamp', +new Date());
-		(d.head || d.body).appendChild(s);
-	})();
+    if (typeof disqusShortname !== 'undefined' && disqusShortname) {
+        var disqus_config = function () {
+            this.page.url = '{{url absolute="true"}}';
+            this.page.identifier = 'ghost-{{comment_id}}';
+        };
+        (function() {
+            var d = document, s = d.createElement('script');
+            s.src = 'https://' + disqusShortname + '.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    }
 </script>

@@ -1,20 +1,17 @@
 {{!< default}}
 {{!-- The tag above means - insert everything in this file into the {body} of the default.hbs template --}}
 
-{{!-- Blog description displayed on the homepage --}}
-{{#if @site.description}}
-<div class="site-description">
-	<p>{{@site.description}}</p>
-</div><!-- .site-description -->
-{{/if}}
+{{!-- The content area on the blog page --}}
+<main class="main">
 
-{{!-- The main content area on the blog page --}}
-<main class="main-content">
+    {{!-- Description displayed on the homepage --}}
+    {{#if @site.description}}
+        <div class="page-header">
+            <div class="page-title">{{@site.description}}</div>
+        </div>
+    {{/if}}
 
-	{{!-- The tag below includes the post loop - partials/loop.hbs --}}
-	{{> "loop"}}
+    {{!-- The tag below includes the post loop - partials/loop.hbs --}}
+    {{> "loop"}}
 
-	{{!-- Previous/next page links - displayed on every page --}}
-	{{pagination}}
-
-</main><!-- .main-content -->
+</main>

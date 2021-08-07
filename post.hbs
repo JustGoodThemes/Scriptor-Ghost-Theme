@@ -2,64 +2,75 @@
 {{!-- The tag above means - insert everything in this file into the {body} of the default.hbs template --}}
 
 {{!-- The main content area on the single post --}}
-<main class="main-content">
+<main class="main">
 
-	{{!-- Everything inside the #post tags pulls data from the page --}}
-	{{#post}}
-	<article class="{{post_class}}">
-		<header class="post-header">
-			{{#if featured}}
-			<span class="featured-post">&darr; Featured</span>
-			{{/if}}
-			<time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
-			<h1 class="post-title">{{title}}</h1>
-			<div class="post-meta">
-				Posted by {{#primary_author}}<a href="{{url}}">{{name}}</a>{{/primary_author}} {{tags prefix=" in "}}
-			</div><!-- .post-meta -->
-			{{#if feature_image}}
-			<div class="post-thumbnail"><img src="{{feature_image}}" alt="{{title}}" /></div>
-			{{/if}}
-		</header><!-- .post-header -->
-		<div class="post-content">
-			{{content}}
-		</div><!-- .post-content -->
-		<div class="share-post">
-			<span>Share this post:</span>
-			<a target="_blank" href="https://twitter.com/intent/tweet?text={{encode title}}&amp;url={{url absolute="true"}}" rel="noopener">Twitter</a>
-			<a target="_blank" href="https://www.facebook.com/sharer.php?u={{url absolute="true"}}" rel="noopener">Facebook</a>
-		</div><!-- .share-post -->
-		{{!-- Everything inside the #author tags pulls data from the author --}}
-		{{#primary_author}}
-		<div class="author-box{{^if profile_image}} no-avatar{{/if}}">
-			{{#if profile_image}}
-			<a class="author-avatar" href="{{url}}" style="background-image: url({{profile_image}})"><span class="screen-reader-text">{{name}}&#39;s Picture</span></a>
-			{{/if}}
-			<div class="author-details">
-				<h2 class="author-title">About <a href="{{url}}">{{name}}</a></h2>
-				{{#if bio}}
-				<p class="author-bio">{{bio}}</p>
-				{{/if}}
-				<div class="author-meta">
-					{{#if location}}
-					<span class="author-location">{{location}}</span>
-					{{/if}}
-					{{#if website}}
-					<span class="author-website"><a href="{{website}}" target="_blank" rel="noopener">{{website}}</a></span>
-					{{/if}}
-					{{#if facebook}}
-					<span class="author-facebook"><a href="{{facebook_url}}" target="_blank" rel="noopener">Facebook</a></span>
-					{{/if}}
-					{{#if twitter}}
-					<span class="author-twitter"><a href="{{twitter_url}}" target="_blank" rel="noopener">Twitter</a></span>
-					{{/if}}
-				</div><!-- .author-meta -->
-			</div><!-- .author-details -->
-		</div><!-- .author-box -->
-		{{/primary_author}}
-	</article>
-	{{/post}}
+    {{!-- Everything inside the #post tags pulls data from the page --}}
+    {{#post}}
+    <article class="{{post_class}}">
+        <header class="post-header">
+            <div class="post-meta">
+                {{#if featured}}
+                <span class="post-featured-badge">{{t "Featured"}}</span>
+                {{/if}}
+                <time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
+            </div>
+            <h1 class="post-title">{{title}}</h1>
+            <div class="post-byline">
+                {{authors separator=", " prefix=(t "Posted by ")}}
+                {{tags separator=", " prefix=(t " in ")}}
+            </div>
+            {{#if feature_image}}
+                <figure class="post-image">
+                    <img src="{{feature_image}}" alt="{{#if feature_image_alt}}{{feature_image_alt}}{{/if}}" />
+                    {{#if feature_image_caption}}
+                        <figcaption>{{feature_image_caption}}</figcaption>
+                    {{/if}}
+                </figure>
+            {{/if}}
+        </header>
+        <div class="post-content">
+            {{content}}
+        </div>
+        <div class="post-share">
+            <span class="post-share-title">{{t "Share this post:"}}</span>
+            <a target="_blank" href="https://twitter.com/intent/tweet?text={{encode title}}&amp;url={{url absolute="true"}}" rel="noopener">{{t "Twitter"}}</a>
+            <a target="_blank" href="https://www.facebook.com/sharer.php?u={{url absolute="true"}}" rel="noopener">{{t "Facebook"}}</a>
+            <a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url={{url absolute="true"}}&amp;title={{encode title}}&amp;source={{encode @site.title}}" rel="noopener">{{t "LinkedIn"}}</a>
+        </div>
+        <div class="author-box">
+            {{#foreach authors}}
+                <div class="author-profile">
+                    {{#if profile_image}}
+                        <div class="author-image">
+                            <img src="{{profile_image}}" alt="{{name}}" />
+                        </div>
+                    {{/if}}
+                    <div class="author-details">
+                        <h2 class="author-title">{{t "About"}} <a href="{{url}}">{{name}}</a></h2>
+                        {{#if bio}}
+                        <p class="author-bio">{{bio}}</p>
+                        {{/if}}
+                        <div class="author-links">
+                            {{#if location}}
+                            <span class="author-location">{{location}}</span>
+                            {{/if}}
+                            {{#if website}}
+                            <span class="author-website"><a href="{{website}}" target="_blank" rel="noopener">{{website}}</a></span>
+                            {{/if}}
+                            {{#if facebook}}
+                            <span class="author-facebook"><a href="{{facebook_url}}" target="_blank" rel="noopener">Facebook</a></span>
+                            {{/if}}
+                            {{#if twitter}}
+                            <span class="author-twitter"><a href="{{twitter_url}}" target="_blank" rel="noopener">Twitter</a></span>
+                            {{/if}}
+                        </div>
+                    </div>
+                </div>
+            {{/foreach}}
+        </div>
+        {{!-- The tag below includes the theme comments - partials/comments.hbs --}}
+        {{> comments}}
+    </article>
+    {{/post}}
 
-	{{!-- The tag below includes the theme comments - partials/comments.hbs --}}
-	{{> comments}}
-
-</main><!-- .main-content -->
+</main>

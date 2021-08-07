@@ -1,0 +1,24 @@
+{{#if next}}
+    <nav class="pagination">
+        <a class="pagination-older" href="{{page_url next}}">
+            {{> "icons/arrow-left"}}
+            {{t "Older Posts"}}
+        </a>
+        {{#if prev}}
+            <span class="pagination-sep">//</span>
+            <a class="pagination-newer" href="{{page_url prev}}">
+                {{t "Newer Posts"}}
+                {{> "icons/arrow-right"}}
+            </a>
+        {{/if}}
+    </nav>
+{{else}}
+    {{#if prev}}
+        <nav class="pagination">
+            <a class="pagination-newer" href="{{page_url prev}}">
+                {{t "Newer Posts"}}
+                {{> "icons/arrow-right"}}
+            </a>
+        </nav>
+    {{/if}}
+{{/if}}

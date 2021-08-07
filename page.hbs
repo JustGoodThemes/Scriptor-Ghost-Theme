@@ -2,26 +2,31 @@
 {{!-- The tag above means - insert everything in this file into the {body} of the default.hbs template --}}
 
 {{!-- The main content area on the static page --}}
-<main class="main-content">
+<main class="main">
 
-	{{!-- Everything inside the #post tags pulls data from the page --}}
-	{{#post}}
-	<article class="{{post_class}}">
-		<header class="post-header">
-			<h1 class="post-title">{{title}}</h1>
-			{{#if tags}}
-			<div class="post-meta">
-				{{tags prefix="Posted in "}}
-			</div><!-- .post-meta -->
-			{{/if}}
-			{{#if feature_image}}
-			<div class="post-thumbnail"><img src="{{feature_image}}" alt="{{title}}" /></div>
-			{{/if}}
-		</header><!-- .post-header -->
-		<div class="post-content">
-			{{content}}
-		</div><!-- .post-content -->
-	</article>
-	{{/post}}
+    {{!-- Everything inside the #post tags pulls data from the page --}}
+    {{#post}}
+    <article class="{{post_class}}">
+        <header class="post-header">
+            <h1 class="post-title">{{title}}</h1>
+            {{#if tags}}
+                <div class="post-byline">
+                    {{tags prefix=(t "Posted in ")}}
+                </div>
+            {{/if}}
+            {{#if feature_image}}
+                <figure class="post-image">
+                    <img src="{{feature_image}}" alt="{{#if feature_image_alt}}{{feature_image_alt}}{{/if}}" />
+                    {{#if feature_image_caption}}
+                        <figcaption>{{feature_image_caption}}</figcaption>
+                    {{/if}}
+                </figure>
+            {{/if}}
+        </header>
+        <div class="post-content">
+            {{content}}
+        </div>
+    </article>
+    {{/post}}
 
-</main><!-- .main-content -->
+</main>

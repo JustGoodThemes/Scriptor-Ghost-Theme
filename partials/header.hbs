@@ -1,13 +1,13 @@
-<header class="site-header">
-	{{#if @site.logo}}
-	<p class="site-logo"><a href="{{@site.url}}"><img src="{{@site.logo}}" alt="{{@site.title}}" /></a></p>
-	{{/if}}
-	{{#is "index"}}
-	<h1 class="site-title"><a href="{{@site.url}}">{{@site.title}}</a></h1>
-	{{else}}
-	<p class="site-title"><a href="{{@site.url}}">{{@site.title}}</a></p>
-	{{/is}}
-	{{#if @site.navigation}}
-		{{navigation}}
-	{{/if}}
-</header><!-- .site-header -->
+<nav class="navbar">
+    {{#if @site.logo}}
+    <a class="navbar-logo" href="{{@site.url}}"><img src="{{@site.logo}}" alt="{{@site.title}} logo" /></a>
+    {{/if}}
+    {{#is "index"}}
+    <h1 class="navbar-title{{#if @site.logo}} sr-only{{/if}}"><a href="{{@site.url}}">{{@site.title}}</a></h1>
+    {{else}}
+    <p class="navbar-title{{#if @site.logo}} sr-only{{/if}}"><a href="{{@site.url}}">{{@site.title}}</a></p>
+    {{/is}}
+    {{#if @site.navigation}}
+        {{navigation}}
+    {{/if}}
+</nav>

@@ -1,47 +1,17 @@
 {{!< default}}
 {{!-- The tag above means - insert everything in this file into the {body} of the default.hbs template --}}
 
-{{!-- The main content area on the author page --}}
-<main class="main-content">
-	<section>
+{{!-- The content area on the author page --}}
+<main class="main">
 
-		{{!-- Everything inside the #author tags pulls data from the author --}}
-		{{#author}}
-		<header class="page-header">
-			<div class="author-box{{^if profile_image}} no-avatar{{/if}}">
-				{{#if profile_image}}
-				<div class="author-avatar" style="background-image: url({{profile_image}})"><span class="screen-reader-text">{{name}}&#39;s Picture</span></div>
-				{{/if}}
-				<div class="author-details">
-					<div class="author-stats">{{plural ../pagination.total empty='No posts' singular='% post' plural='% posts'}}</div>
-					<h3 class="author-title">{{name}}</h3>
-					{{#if bio}}
-					<p class="author-bio">{{bio}}</p>
-					{{/if}}
-					<div class="author-meta">
-						{{#if location}}
-						<span class="author-location">{{location}}</span>
-						{{/if}}
-						{{#if website}}
-						<span class="author-website"><a href="{{website}}" target="_blank" rel="noopener">{{website}}</a></span>
-						{{/if}}
-						{{#if facebook}}
-						<span class="author-facebook"><a href="{{facebook_url}}" target="_blank" rel="noopener">Facebook</a></span>
-						{{/if}}
-						{{#if twitter}}
-						<span class="author-twitter"><a href="{{twitter_url}}" target="_blank" rel="noopener">Twitter</a></span>
-						{{/if}}
-					</div><!-- .author-meta -->
-				</div><!-- .author-details -->
-			</div><!-- .author-box -->
-		</header><!-- .page-header -->
-		{{/author}}
+    {{!-- Everything inside the #author tags pulls data from the author --}}
+    {{#author}}
+    <header class="page-header">
+        <h1 class="page-title">{{plural ../pagination.total empty=(t "No posts by") singular=(t "% post by") plural=(t "% posts by")}} <span class="page-title-highlight">{{name}}</span></h1>
+    </header>
+    {{/author}}
 
-		{{!-- The tag below includes the post loop - partials/loop.hbs --}}
-		{{> "loop"}}
+    {{!-- The tag below includes the post loop - partials/loop.hbs --}}
+    {{> "loop"}}
 
-		{{!-- Previous/next page links - displayed on every page --}}
-		{{pagination}}
-
-	</section>
-</main><!-- .main-content -->
+</main>
