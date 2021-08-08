@@ -8,30 +8,48 @@ See a live demo of Scriptor [here](https://scriptor.justgoodthemes.com/).
 
 ## Disqus Comments
 
-Scriptor theme comes with Disqus commenting built-in, you just need to have a Disqus account (create it at [Disqus.com](https://disqus.com/)). To enable commenting, you need to change the default Disqus account shortname "my_disqus_shortname" on line 11 in the **comments.hbs** file located in the partials theme folder (Ghost/content/themes/scriptor/partials).
+Scriptor theme comes with Disqus commenting built-in, you just need to have a Disqus account (create it at [Disqus.com](https://disqus.com/)). To enable commenting, you just need to add your Disqus shortname to the "Site Header" field located in **Settings** → **Code injection** in your Ghost admin:
 
 ```
-var disqus_shortname = 'my_disqus_shortname';
+<script>
+    const disqusShortname = 'YOUR_DISQUS_SHORTNAME';
+</script>
 ```
 
-If you wish to disable commenting, just remove the following lines from the **post.hbs** file located in the main theme folder:
+If you wish to disable commenting, just remove the following lines from the `post.hbs` file located in the main theme folder:
 
 ```
 {{!-- The tag below includes the theme comments - partials/comments.hbs --}}
 {{> comments}}
 ```
 
-## Copyright Information (Footer)
+## Social Links
 
-You will find all copyright information in the `<div>` with the class **"site-info"** in the **footer.hbs** file within the partials folder (Ghost/content/themes/scriptor/partials) of the theme.
+To add Facebook and Twitter links, navigate to **Settings** → **General**, click **Expand** next to **Social accounts** and enter the URLs of your Facebook and Twitter profiles.
+
+All other social media links can be added manually in the `footer.hbs` file located in the `partials` folder of the theme. For instance, if you want to add the link to your Instagram account, add the following code inside the `<div>` element with the class of `footer-social`:
+
+```
+<a href="URL_TO_YOUR_INSTAGRAM_PROFILE" target="_blank" rel="noopener">
+    <span class="sr-only">Instagram</span>
+    {{> "icons/instagram"}}
+</a>
+```
+
+To see the available icons, please check the `icons` folder of the theme located in the `partials` folder.
+
+## Translation
+
+The **Scriptor** theme is fully translatable. You can find the default file in the `locales` folder. Copy `locales/en.json` to `locales/[language_code].json`. The `language_code` must be replaced with a valid code. You can edit the renamed translation file with any plain text editor.
+
+To find more information on how to translate the theme, check [Ghost documentation](https://ghost.org/docs/themes/helpers/translate/).
 
 ## Credits
 
-- [Droid Serif font](https://www.google.com/fonts/specimen/Droid+Serif)
 - [Lato font](https://fonts.google.com/specimen/Lato)
-- [Font Awesome icons](http://fontawesome.io)
-- [FitVids plugin](http://fitvidsjs.com/)
+- [Simple Icons](https://simpleicons.org/)
+- [Reframe.js](https://github.com/yowainwright/reframe.js)
 
 ## Copyright & License
 
-Copyright (c) 2015-2019 Just Good Themes - Released under the [MIT license](LICENSE).
+Copyright (c) 2015-2021 Just Good Themes - Released under the [MIT license](LICENSE).

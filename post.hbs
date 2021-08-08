@@ -17,7 +17,7 @@
             <h1 class="post-title">{{title}}</h1>
             <div class="post-byline">
                 {{authors separator=", " prefix=(t "Posted by ")}}
-                {{tags separator=", " prefix=(t " in ")}}
+                {{tags separator=", " prefix=(t "in ")}}
             </div>
             {{#if feature_image}}
                 <figure class="post-image">
@@ -33,9 +33,9 @@
         </div>
         <div class="post-share">
             <span class="post-share-title">{{t "Share this post:"}}</span>
-            <a target="_blank" href="https://twitter.com/intent/tweet?text={{encode title}}&amp;url={{url absolute="true"}}" rel="noopener">{{t "Twitter"}}</a>
-            <a target="_blank" href="https://www.facebook.com/sharer.php?u={{url absolute="true"}}" rel="noopener">{{t "Facebook"}}</a>
-            <a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url={{url absolute="true"}}&amp;title={{encode title}}&amp;source={{encode @site.title}}" rel="noopener">{{t "LinkedIn"}}</a>
+            <a target="_blank" href="https://twitter.com/intent/tweet?text={{encode title}}&amp;url={{url absolute="true"}}" rel="noopener">Twitter</a>
+            <a target="_blank" href="https://www.facebook.com/sharer.php?u={{url absolute="true"}}" rel="noopener">Facebook</a>
+            <a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url={{url absolute="true"}}&amp;title={{encode title}}&amp;source={{encode @site.title}}" rel="noopener">LinkedIn</a>
         </div>
         <div class="author-box">
             {{#foreach authors}}
