@@ -44,6 +44,17 @@ The **Scriptor** theme is fully translatable. You can find the default file in t
 
 To find more information on how to translate the theme, check [Ghost documentation](https://ghost.org/docs/themes/helpers/translate/).
 
+## Development
+
+To start developing locally, you need to have Ghost installed on your machine. Please follow installation instructions provided in [Ghost documentation](https://ghost.org/docs/install/local/).
+
+The theme stylesheet is located in ```/assets/css/```.
+
+## Theme Support
+
+If you find any issues with the theme, please send us an [email](mailto:support@justgoodthemes.com) or create an [issue](https://github.com/JustGoodThemes/Scriptor-Ghost-Theme/issues) in the theme repo.  
+
+
 ## Credits
 
 - [Lato font](https://fonts.google.com/specimen/Lato)
