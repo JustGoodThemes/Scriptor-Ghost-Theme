@@ -48,7 +48,7 @@ To find more information on how to translate the theme, check [Ghost documentati
 
 To start developing locally, you need to have Ghost installed on your machine. Please follow installation instructions provided in [Ghost documentation](https://ghost.org/docs/install/local/).
 
-The theme stylesheet is located in ```/assets/css/```.
+The theme stylesheet is located in `/assets/css/`.
 
 ## Theme Support
 
