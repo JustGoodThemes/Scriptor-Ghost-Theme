@@ -63,4 +63,4 @@ If you find any issues with the theme, please send us an [email](mailto:support@
 
 ## Copyright & License
 
-Copyright (c) 2015-2021 Just Good Themes - Released under the [MIT license](LICENSE).
+Copyright (c) 2015-2022 Just Good Themes - Released under the [MIT license](LICENSE).
