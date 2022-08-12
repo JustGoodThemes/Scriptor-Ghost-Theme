@@ -8,6 +8,10 @@
         <p class="navbar-title{{#if @site.logo}} sr-only{{/if}}"><a href="{{@site.url}}">{{@site.title}}</a></p>
     {{/is}}
     {{#if @site.navigation}}
-        {{navigation}}
+        <div class="navbar-menu">
+            {{navigation}}
+        </div>
+    {{else}}
+        <button class="navbar-search-btn" aria-label="Search" data-ghost-search>{{> "icons/search"}}</button>
     {{/if}}
 </nav>

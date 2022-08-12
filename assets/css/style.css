@@ -487,6 +487,31 @@ figcaption {
     white-space: nowrap;
 }
 
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-item {
+    display: inline-block;
+}
+
+.menu-item a {
+    color: inherit;
+    font-size: 0.875rem;
+    padding: 0.25rem;
+    text-decoration: none;
+}
+
+.menu-item a:hover,
+.menu-item a:focus,
+.menu-item-current {
+    color: var(--ghost-accent-color);
+}
+
 /* 3. Cards
 ----------------------------- */
 .kg-card {
@@ -670,15 +695,16 @@ figcaption {
 /* 5. Navbar
 ----------------------------- */
 .navbar {
+    align-items: center;
     border-bottom: 1px solid var(--color-gray-light);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
     padding: 1.875rem 0 2.5rem;
 }
 
 @media only screen and (min-width: 768px) {
     .navbar {
-        align-items: center;
-        display: flex;
-        justify-content: space-between;
         padding-bottom: 3.125rem;
         padding-top: 2.5rem;
     }
@@ -706,39 +732,47 @@ figcaption {
 }
 
 .navbar-menu {
-    list-style: none;
     margin: 1.25rem -0.25rem 0;
-    padding: 0;
+    width: 100%;
 }
 
 @media only screen and (min-width: 768px) {
     .navbar-menu {
         margin: 0;
+        width: auto;
     }
 }
 
-.navbar-menu-item {
-    display: inline-block;
+.navbar-menu .menu-item {
     margin-right: 0.75em;
 }
 
 @media only screen and (min-width: 768px) {
-    .navbar-menu-item {
+    .navbar-menu .menu-item {
         margin-left: 0.75em;
         margin-right: 0;
     }
 }
 
-.navbar-menu-item a {
+.navbar-search-btn {
+    align-items: center;
+    background-color: transparent;
+    border: 0;
+    box-shadow: none;
     color: inherit;
+    cursor: pointer;
+    display: inline-flex;
     font-size: 0.875rem;
-    padding: 0.25rem;
-    text-decoration: none;
+    justify-content: center;
+    height: 1.66667rem;
+    line-height: 1;
+    padding: 0;
+    width: 1.66667rem;
 }
-
-.navbar-menu-item a:hover,
-.navbar-menu-item a:focus {
-    color: var(--ghost-accent-color);
+.navbar-search-btn svg {
+    fill: currentColor;
+    height: 1em;
+    width: 1em;
 }
 
 /* 6. Page Header
@@ -777,19 +811,6 @@ figcaption {
 
 .page-title-highlight {
     color:var(--color-gray-dark);
-}
-
-/*  Ghost search icon */
-.gh-icon-btn {
-    background-color: transparent;
-    border: 0;
-    cursor: pointer;
-    color: inherit;
-    vertical-align: middle;
-}
-.gh-icon-btn svg {
-    height: 16px;
-    width: 16px;
 }
 
 /* 7. Posts
@@ -1079,6 +1100,14 @@ figcaption {
         padding-bottom: 1.875rem;
         padding-top: 1.875rem;
     }
+}
+
+.footer-nav {
+    margin-bottom: 0.75rem;
+}
+
+.footer-nav .menu-item {
+    margin-right: 0.5em;
 }
 
 .footer-social {
