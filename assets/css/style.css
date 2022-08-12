@@ -679,6 +679,7 @@ figcaption {
     flex-grow: 1;
     margin: 0 auto;
     max-width: 760px;
+    width: 100%;
 }
 
 .main {
@@ -764,10 +765,9 @@ figcaption {
     display: inline-flex;
     font-size: 0.875rem;
     justify-content: center;
-    height: 1.66667rem;
     line-height: 1;
-    padding: 0;
-    width: 1.66667rem;
+    padding: 0.5rem;
+    vertical-align: middle;
 }
 .navbar-search-btn svg {
     fill: currentColor;
