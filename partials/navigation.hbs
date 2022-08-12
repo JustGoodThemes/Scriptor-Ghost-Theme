@@ -1,5 +1,14 @@
-<ul class="navbar-menu">
-    {{#foreach navigation}}
-        <li class="navbar-menu-item {{#if current}} is-current{{/if}}"><a href="{{url absolute="true"}}">{{label}}</a></li>
-    {{/foreach}}
-</ul>
+{{#if isSecondary}}
+    <ul class="menu">
+        {{#foreach navigation}}
+            <li class="menu-item"><a href="{{url absolute="true"}}">{{label}}</a></li>
+        {{/foreach}}
+    </ul>
+{{else}}
+    <ul class="menu">
+        {{#foreach navigation}}
+            <li class="menu-item {{#if current}} menu-item-current{{/if}}"><a href="{{url absolute="true"}}">{{label}}</a></li>
+        {{/foreach}}
+        <li class="menu-item"><button class="navbar-search-btn" data-ghost-search>{{> "icons/search"}}</button></li>
+    </ul>
+{{/if}}

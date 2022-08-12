@@ -1,4 +1,9 @@
 <footer class="footer">
+    {{#if @site.secondary_navigation}}
+        <div class="footer-nav">
+            {{navigation type="secondary"}}
+        </div>
+    {{/if}}
     <div class="footer-social">
         {{#if @site.twitter}}
             <a href="{{twitter_url}}" target="_blank" rel="noopener">
