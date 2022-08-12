@@ -2,4 +2,7 @@
     {{#foreach navigation}}
         <li class="navbar-menu-item {{#if current}} is-current{{/if}}"><a href="{{url absolute="true"}}">{{label}}</a></li>
     {{/foreach}}
+    <li class="navbar-menu-item">
+        <button class="gh-icon-btn" data-ghost-search>{{> "icons/search"}}</button>
+    </li>
 </ul>

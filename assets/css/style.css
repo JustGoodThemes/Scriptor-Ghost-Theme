@@ -779,6 +779,19 @@ figcaption {
     color:var(--color-gray-dark);
 }
 
+/*  Ghost search icon */
+.gh-icon-btn {
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    color: inherit;
+    vertical-align: middle;
+}
+.gh-icon-btn svg {
+    height: 16px;
+    width: 16px;
+}
+
 /* 7. Posts
 ----------------------------- */
 .post {
