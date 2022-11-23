@@ -1039,6 +1039,11 @@ figcaption {
     }
 }
 
+.comments-count {
+    display: block;
+    padding-bottom: 1rem;
+}
+
 .comments-title {
     font-size: 1.25rem;
     margin-bottom: 1.25rem;
