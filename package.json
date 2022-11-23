@@ -2,10 +2,9 @@
     "name": "scriptor",
     "description": "A minimal Ghost blogging theme for writers",
     "demo": "https://scriptor.justgoodthemes.com/",
-    "version": "2.0.0",
+    "version": "2.0.1",
     "engines": {
-        "ghost": ">=4.0.0",
-        "ghost-api": "v4"
+        "ghost": ">=5.0.0"
     },
     "license": "MIT",
     "screenshots": {
@@ -27,6 +26,25 @@
         "url": "https://github.com/JustGoodThemes/Scriptor-Ghost-Theme.git"
     },
     "config": {
-        "posts_per_page": 6
+        "posts_per_page": 6,
+        "card_assets": {
+            "exclude": [
+                "blockquote",
+                "bookmark",
+                "gallery"
+            ]
+        },
+        "custom": {
+            "enable_disqus": {
+                "type": "boolean",
+                "default": false,
+                "group": "post"
+            },
+            "disqus_shortname": {
+                "type": "text",
+                "default": "",
+                "group": "post"
+            }
+        }
     }
 }

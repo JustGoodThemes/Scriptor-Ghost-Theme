@@ -28,48 +28,60 @@
                 </figure>
             {{/if}}
         </header>
-        <div class="post-content">
-            {{content}}
-        </div>
-        <div class="post-share">
-            <span class="post-share-title">{{t "Share this post:"}}</span>
-            <a target="_blank" href="https://twitter.com/intent/tweet?text={{encode title}}&amp;url={{url absolute="true"}}" rel="noopener">Twitter</a>
-            <a target="_blank" href="https://www.facebook.com/sharer.php?u={{url absolute="true"}}" rel="noopener">Facebook</a>
-            <a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url={{url absolute="true"}}&amp;title={{encode title}}&amp;source={{encode @site.title}}" rel="noopener">LinkedIn</a>
-        </div>
-        <div class="author-box">
-            {{#foreach authors}}
-                <div class="author-profile">
-                    {{#if profile_image}}
-                        <div class="author-image">
-                            <img src="{{profile_image}}" alt="{{name}}" />
-                        </div>
-                    {{/if}}
-                    <div class="author-details">
-                        <h2 class="author-title">{{t "About"}} <a href="{{url}}">{{name}}</a></h2>
-                        {{#if bio}}
-                        <p class="author-bio">{{bio}}</p>
+        {{!-- If the user has access, show post content, authors, comments --}}
+        {{#if access}}
+            <div class="post-content">
+                {{content}}
+            </div>
+            <div class="post-share">
+                <span class="post-share-title">{{t "Share this post:"}}</span>
+                <a target="_blank" href="https://twitter.com/intent/tweet?text={{encode title}}&amp;url={{url absolute="true"}}" rel="noopener">Twitter</a>
+                <a target="_blank" href="https://www.facebook.com/sharer.php?u={{url absolute="true"}}" rel="noopener">Facebook</a>
+                <a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url={{url absolute="true"}}&amp;title={{encode title}}&amp;source={{encode @site.title}}" rel="noopener">LinkedIn</a>
+            </div>
+            <div class="author-box">
+                {{#foreach authors}}
+                    <div class="author-profile">
+                        {{#if profile_image}}
+                            <div class="author-image">
+                                <img src="{{profile_image}}" alt="{{name}}" />
+                            </div>
                         {{/if}}
-                        <div class="author-links">
-                            {{#if location}}
-                            <span class="author-location">{{location}}</span>
+                        <div class="author-details">
+                            <h2 class="author-title">{{t "About"}} <a href="{{url}}">{{name}}</a></h2>
+                            {{#if bio}}
+                            <p class="author-bio">{{bio}}</p>
                             {{/if}}
-                            {{#if website}}
-                            <span class="author-website"><a href="{{website}}" target="_blank" rel="noopener">{{website}}</a></span>
-                            {{/if}}
-                            {{#if facebook}}
-                            <span class="author-facebook"><a href="{{facebook_url}}" target="_blank" rel="noopener">Facebook</a></span>
-                            {{/if}}
-                            {{#if twitter}}
-                            <span class="author-twitter"><a href="{{twitter_url}}" target="_blank" rel="noopener">Twitter</a></span>
-                            {{/if}}
+                            <div class="author-links">
+                                {{#if location}}
+                                <span class="author-location">{{location}}</span>
+                                {{/if}}
+                                {{#if website}}
+                                <span class="author-website"><a href="{{website}}" target="_blank" rel="noopener">{{website}}</a></span>
+                                {{/if}}
+                                {{#if facebook}}
+                                <span class="author-facebook"><a href="{{facebook_url}}" target="_blank" rel="noopener">Facebook</a></span>
+                                {{/if}}
+                                {{#if twitter}}
+                                <span class="author-twitter"><a href="{{twitter_url}}" target="_blank" rel="noopener">Twitter</a></span>
+                                {{/if}}
+                            </div>
                         </div>
                     </div>
-                </div>
-            {{/foreach}}
-        </div>
-        {{!-- The tag below includes the theme comments - partials/comments.hbs --}}
-        {{> comments}}
+                {{/foreach}}
+            </div>
+            {{!-- If Disqus enabled, includes the Disqus comments - partials/comments-disqus.hbs --}}
+            {{#if @custom.enable_disqus}}
+                {{#if @custom.disqus_shortname}}
+                    {{> "comments-disqus"}}
+                {{/if}}
+            {{!-- If Disqus not enabled and Ghost comments enabled, include ghost comments - partials/comments.hbs --}}
+            {{else}}
+                {{#if comments}}
+                    {{> comments}}
+                {{/if}}
+            {{/if}}
+        {{/if}}
     </article>
     {{/post}}
 

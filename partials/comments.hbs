@@ -1,19 +1,5 @@
 <section class="comments">
-    <h2 class="comments-title">{{t "Comments"}}</h2>
-    <div id="disqus_thread"></div>
+    <h2 class="comments-title">{{t "Member discussion"}}</h2>
+    {{comment_count empty=(t "0 comments") singular=(t "comment") plural=(t "comments") class="comments-count"}}
+    {{comments title="" count=false mode="light"}}
 </section>
-
-<script>
-    if (typeof disqusShortname !== 'undefined' && disqusShortname) {
-        var disqus_config = function () {
-            this.page.url = '{{url absolute="true"}}';
-            this.page.identifier = 'ghost-{{comment_id}}';
-        };
-        (function() {
-            var d = document, s = d.createElement('script');
-            s.src = 'https://' + disqusShortname + '.disqus.com/embed.js';
-            s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
-        })();
-    }
-</script>
