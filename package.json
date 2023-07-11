@@ -2,7 +2,7 @@
     "name": "scriptor",
     "description": "A minimal Ghost blogging theme for writers",
     "demo": "https://scriptor.justgoodthemes.com/",
-    "version": "2.0.1",
+    "version": "2.0.2",
     "engines": {
         "ghost": ">=5.0.0"
     },
@@ -46,5 +46,25 @@
                 "group": "post"
             }
         }
+    },
+    "scripts": {
+        "dev": "gulp",
+        "test": "gscan .",
+        "zip": "gulp zip"
+    },
+    "devDependencies": {
+        "autoprefixer": "10.4.14",
+        "beeper": "2.1.0",
+        "cssnano": "6.0.1",
+        "gscan": "4.37.1",
+        "gulp": "4.0.2",
+        "gulp-concat": "2.6.1",
+        "gulp-livereload": "4.0.2",
+        "gulp-postcss": "9.0.1",
+        "gulp-uglify": "3.0.2",
+        "gulp-zip": "5.1.0",
+        "postcss": "8.4.25",
+        "postcss-easy-import": "4.0.0",
+        "pump": "3.0.0"
     }
 }

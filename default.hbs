@@ -10,7 +10,7 @@
 
         {{!-- Styles --}}
         {{> custom-fonts}}
-        <link rel="stylesheet" type="text/css" href="{{asset "css/style.css"}}" />
+        <link rel="stylesheet" type="text/css" href="{{asset "built/style.css"}}" />
 
         {{!-- SEO meta+structured data and other important settings --}}
         {{ghost_head}}
@@ -26,7 +26,7 @@
         </div>
 
         {{!-- Scripts --}}
-        <script src="{{asset "js/index.js"}}"></script>
+        <script src="{{asset "built/main.min.js"}}"></script>
         {{#is "post, page"}}
         <script src="{{asset "js/post.js"}}"></script>
         {{/is}}
