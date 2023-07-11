@@ -50,10 +50,13 @@ To start developing locally, you need to have Ghost installed on your machine. P
 
 The theme stylesheet is located in `/assets/css/`.
 
+## Theme Deploy with GitHub Actions
+
+Scriptor has the [Deploy Ghost Theme](https://github.com/marketplace/actions/deploy-ghost-theme) Github action integrated. The purpose of the GitHub action is to take the theme from the GitHub repo and send it to your website. To learn more about Deploy Ghost Theme, please follow [this guide](https://justgoodthemes.com/resources/deploying-your-ghost-theme-using-github-actions/).
+
 ## Theme Support
 
 If you find any issues with the theme, please send us an [email](mailto:support@justgoodthemes.com) or create an [issue](https://github.com/JustGoodThemes/Scriptor-Ghost-Theme/issues) in the theme repo.  
-
 
 ## Credits
 
@@ -63,4 +66,4 @@ If you find any issues with the theme, please send us an [email](mailto:support@
 
 ## Copyright & License
 
-Copyright (c) 2015-2022 Just Good Themes - Released under the [MIT license](LICENSE).
+Copyright (c) 2015-2023 Just Good Themes - Released under the [MIT license](LICENSE).
