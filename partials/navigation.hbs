@@ -9,6 +9,6 @@
         {{#foreach navigation}}
             <li class="menu-item {{#if current}} menu-item-current{{/if}}"><a href="{{url absolute="true"}}">{{label}}</a></li>
         {{/foreach}}
-        <li class="menu-item"><button class="navbar-search-btn" data-ghost-search>{{> "icons/search"}}</button></li>
+        <li class="menu-item"><button class="navbar-search-btn" aria-label="Search" data-ghost-search>{{> "icons/search"}}</button></li>
     </ul>
 {{/if}}
