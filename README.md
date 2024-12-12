@@ -6,22 +6,22 @@ See a live demo of Scriptor [here](https://scriptor.justgoodthemes.com/).
 
 [![Scriptor showcase](assets/scriptor-preview.png)](https://scriptor.justgoodthemes.com/)
 
-## Disqus Comments
+## Comments
 
-Scriptor theme comes with Disqus commenting built-in, you just need to have a Disqus account (create it at [Disqus.com](https://disqus.com/)). To enable commenting, you just need to add your Disqus shortname to the "Site Header" field located in **Settings** → **Code injection** in your Ghost admin:
+Scriptor supports Ghost native or Disqus comments.
 
-```
-<script>
-    const disqusShortname = 'YOUR_DISQUS_SHORTNAME';
-</script>
-```
+To enable Ghost native comments:
 
-If you wish to disable commenting, just remove the following lines from the `post.hbs` file located in the main theme folder:
+1. Navigate to Settings → Membership in your Ghost admin.
+2. Select the suitable option from the Commenting dropdown.
+3. Save changes.
 
-```
-{{!-- The tag below includes the theme comments - partials/comments.hbs --}}
-{{> comments}}
-```
+To enable Disqus commenting:
+
+1. Navigate to Settings → Design in your Ghost admin.
+2. Expand the Post section.
+3. Turn on Enable Disqus and add your shortname in the Disqus shortname field.
+4. Save changes.
 
 ## Social Links
 
