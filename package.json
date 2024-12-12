@@ -2,7 +2,7 @@
     "name": "scriptor",
     "description": "A minimal Ghost blogging theme for writers",
     "demo": "https://scriptor.justgoodthemes.com/",
-    "version": "2.0.1",
+    "version": "2.1.0",
     "engines": {
         "ghost": ">=5.0.0"
     },
@@ -34,7 +34,36 @@
                 "gallery"
             ]
         },
+        "image_sizes": {
+            "xs": {
+                "width": 120
+            },
+            "s": {
+                "width": 400
+            },
+            "m": {
+                "width": 600
+            },
+            "l": {
+                "width": 800
+            },
+            "xl": {
+                "width": 1200
+            }
+        },
         "custom": {
+            "instagram_profile": {
+                "type": "text",
+                "description": "URL of your personal Instagram Profile"
+            },
+            "bluesky_profile": {
+                "type": "text",
+                "description": "URL of your personal Bluesky Profile"
+            },
+            "linkedin_profile": {
+                "type": "text",
+                "description": "URL of your personal LinkedIn Profile"
+            },
             "enable_disqus": {
                 "type": "boolean",
                 "default": false,
@@ -43,7 +72,8 @@
             "disqus_shortname": {
                 "type": "text",
                 "default": "",
-                "group": "post"
+                "group": "post",
+                "visibility": "enable_disqus:true"
             }
         }
     }

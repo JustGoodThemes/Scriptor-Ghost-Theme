@@ -17,7 +17,6 @@
 /* 1. Global
 ----------------------------- */
 :root {
-
     /* Colours */
     --color-gray-lightest: #F7F8F9;
     --color-gray-light:    #DCDFE1;
@@ -26,9 +25,9 @@
     --color-yellow:        #FFF7C5;
 
     /* Fonts */
-    --font-primary: 'Lato', sans-serif;
+    --font-primary: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+        'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
     --font-mono: Consolas, 'Andale Mono', 'Courier New', Courier, monospace;
-
 }
 
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
@@ -206,7 +205,7 @@ template {
 /* 2. Base
 ----------------------------- */
 html {
-    font-family: var(--font-primary);
+    font-family: var(--gh-font-body, var(--font-primary));
     font-size: 100%;
 }
 
@@ -261,6 +260,7 @@ h4,
 h5,
 h6 {
     color: var(--color-gray-dark);
+    font-family: var(--gh-font-heading, var(--font-primary));
     font-weight: bold;
     line-height: 1.2;
     margin: 2.5rem 0 1.25rem;
@@ -451,7 +451,7 @@ embed,
 iframe,
 object,
 video {
-  max-width: 100%;
+    max-width: 100%;
 }
 
 figure {
@@ -468,7 +468,7 @@ figcaption {
 }
 
 :not(.kg-card) > .js-reframe {
-  margin: 1.875rem 0;
+    margin: 1.875rem 0;
 }
 
 :not(.kg-card) > .js-reframe:first-child {
@@ -644,13 +644,22 @@ figcaption {
     width: 100%;
 }
 
+.kg-blockquote-alt {
+    font-size: 1.5rem;
+    line-height: 1.4;
+    margin: 2.5rem 0;
+    border: 0;
+    padding: 0;
+    text-align: center;
+}
+
 @media only screen and (min-width: 900px) {
     .kg-gallery-card,
     .kg-width-full,
     .kg-width-wide {
         margin-left: calc(425px - 50vw);
         margin-right: calc(425px - 50vw);
-     }
+    }
 
     .kg-width-full .kg-image,
     .kg-width-wide .kg-image {
@@ -810,7 +819,7 @@ figcaption {
 }
 
 .page-title-highlight {
-    color:var(--color-gray-dark);
+    color: var(--color-gray-dark);
 }
 
 /* 7. Posts
@@ -999,10 +1008,32 @@ figcaption {
 
 .author-links {
     font-size: 0.8125rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    column-gap: 0.75rem;
+    row-gap: 0.5rem;
 }
 
-.author-links > span {
-    margin-right: 0.75rem;
+.author-links a:has(svg) {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    color: var(--color-gray);
+}
+
+.author-links a:has(svg):hover,
+.author-links a:has(svg):focus {
+    color: var(--ghost-accent-color);
+}
+
+.author-links svg {
+    fill: currentColor;
+    flex-shrink: 0;
+    height: 1em;
+    width: 1em;
+    overflow: visible;
 }
 
 @media only screen and (min-width: 480px) {
@@ -1033,7 +1064,7 @@ figcaption {
 }
 
 @media only screen and (min-width: 480px) {
-    .comments{
+    .comments {
         padding-bottom: 3.125rem;
         padding-top: 1.875rem;
     }
@@ -1135,9 +1166,11 @@ figcaption {
 }
 
 .footer-social svg {
+    flex-shrink: 0;
     fill: currentColor;
     height: 1.25rem;
     width: 1.25rem;
+    overflow: visible;
 }
 
 .footer-info {
