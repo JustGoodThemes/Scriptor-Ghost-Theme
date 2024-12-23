@@ -2,7 +2,7 @@
     "name": "scriptor",
     "description": "A minimal Ghost blogging theme for writers",
     "demo": "https://scriptor.justgoodthemes.com/",
-    "version": "2.1.0",
+    "version": "2.1.1",
     "engines": {
         "ghost": ">=5.0.0"
     },
