@@ -11,10 +11,14 @@
     "No posts in": "Nenhuma publicação em",
     "% post in": "% publicação em",
     "% posts in": "% publicações em",
+    "Member discussion": "Participe da Conversa",
+    "comment": "comentário",
     "Comments": "Comentários",
+    "comments": "comentários",
     "Published with {ghostlink}. Scriptor theme by {jgtlink}.": "Publicado com {ghostlink}. Tema Scriptor por {jgtlink}.",
     "Back to the top": "Voltar ao topo",
     "Continue reading": "Continue a leitura",
     "Older Posts": "Publicações antigas",
-    "Newer Posts": "Publicações recentes"
+    "Newer Posts": "Publicações recentes",
+    "Search": "Pesquisar"
 }
