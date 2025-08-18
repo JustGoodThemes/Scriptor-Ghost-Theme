@@ -67,11 +67,32 @@
                                 {{#if website}}
                                     <a href="{{website}}" target="_blank" rel="noopener">{{website}}</a>
                                 {{/if}}
-                                {{#if facebook}}
-                                    <a href="{{facebook_url}}" target="_blank" rel="noopener" aria-label="Facebook">{{> "icons/facebook"}}</a>
-                                {{/if}}
                                 {{#if twitter}}
-                                    <a href="{{twitter_url}}" target="_blank" rel="noopener" aria-label="X">{{> "icons/x"}}</a>
+                                    <a href="{{social_url type="twitter"}}" target="_blank" rel="noopener" aria-label="X">{{> "icons/x"}}</a>
+                                {{/if}}
+                                {{#if facebook}}
+                                    <a href="{{social_url type="facebook"}}" target="_blank" rel="noopener" aria-label="Facebook">{{> "icons/facebook"}}</a>
+                                {{/if}}
+                                {{#if linkedin}}
+                                    <a href="{{social_url type="linkedin"}}" target="_blank" rel="noopener" aria-label="LinkedIn">{{> "icons/linkedin"}}</a>
+                                {{/if}}
+                                {{#if bluesky}}
+                                    <a href="{{social_url type="bluesky"}}" target="_blank" rel="noopener" aria-label="BlueSky">{{> "icons/bluesky"}}</a>
+                                {{/if}}
+                                {{#if threads}}
+                                    <a href="{{social_url type="threads"}}" target="_blank" rel="noopener" aria-label="Threads">{{> "icons/threads"}}</a>
+                                {{/if}}
+                                {{#if mastodon}}
+                                    <a href="{{social_url type="mastodon"}}" target="_blank" rel="noopener" aria-label="Mastodon">{{> "icons/mastodon"}}</a>
+                                {{/if}}
+                                {{#if tiktok}}
+                                    <a href="{{social_url type="tiktok"}}" target="_blank" rel="noopener" aria-label="TikTok">{{> "icons/tiktok"}}</a>
+                                {{/if}}
+                                {{#if youtube}}
+                                    <a href="{{social_url type="youtube"}}" target="_blank" rel="noopener" aria-label="YouTube">{{> "icons/youtube"}}</a>
+                                {{/if}}
+                                {{#if instagram}}
+                                    <a href="{{social_url type="instagram"}}" target="_blank" rel="noopener" aria-label="Instagram">{{> "icons/instagram"}}</a>
                                 {{/if}}
                             </div>
                         </div>
