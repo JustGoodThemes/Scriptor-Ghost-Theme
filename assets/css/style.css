@@ -725,6 +725,7 @@ figcaption {
 
 .navbar-title {
     color: var(--color-gray-dark);
+    font-family: var(--gh-font-heading, var(--font-primary));
     font-size: 1.75em;
     font-weight: bold;
     letter-spacing: -0.025em;
