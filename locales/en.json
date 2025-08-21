@@ -11,10 +11,15 @@
     "No posts in": "No posts in",
     "% post in": "% post in",
     "% posts in": "% posts in",
+    "Member discussion": "Member discussion",
+    "0 comments": "0 comments",
+    "comment": "comment",
     "Comments": "Comments",
+    "comments": "comments",
     "Published with {ghostlink}. Scriptor theme by {jgtlink}.": "Published with {ghostlink}. Scriptor theme by {jgtlink}.",
     "Back to the top": "Back to the top",
     "Continue reading": "Continue reading",
     "Older Posts": "Older Posts",
-    "Newer Posts": "Newer Posts"
+    "Newer Posts": "Newer Posts",
+    "Search": "Search"
 }
