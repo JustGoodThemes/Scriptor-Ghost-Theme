@@ -222,21 +222,12 @@ body {
     display: flex;
     flex-direction: column;
     line-height: 1.625;
-    padding-left: 15px;
-    padding-right: 15px;
     min-height: 100vh;
 }
 
 @media only screen and (min-width: 640px) {
     body {
         border-width: 15px;
-    }
-}
-
-@media only screen and (min-width: 640px) {
-    body {
-        padding-left: 30px;
-        padding-right: 30px;
     }
 }
 
@@ -686,15 +677,24 @@ figcaption {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    margin: 0 auto;
-    max-width: 760px;
     width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+@media only screen and (min-width: 640px) {
+    .container {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
 }
 
 .main {
     box-sizing: border-box;
     flex-grow: 1;
     width: 100%;
+    max-width: 760px;
+    margin: 0 auto;
 }
 
 .post-template .main,
@@ -706,11 +706,14 @@ figcaption {
 ----------------------------- */
 .navbar {
     align-items: center;
-    border-bottom: 1px solid var(--color-gray-light);
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    width: 100%;
+    max-width: 760px;
+    margin: 0 auto;
     padding: 1.875rem 0 2.5rem;
+    border-bottom: 1px solid var(--color-gray-light);
 }
 
 @media only screen and (min-width: 768px) {
@@ -722,6 +725,7 @@ figcaption {
 
 .navbar-title {
     color: var(--color-gray-dark);
+    font-family: var(--gh-font-heading, var(--font-primary));
     font-size: 1.75em;
     font-weight: bold;
     letter-spacing: -0.025em;
@@ -1127,8 +1131,11 @@ figcaption {
 /* 11. Footer
 ----------------------------- */
 .footer {
-    border-top: 1px solid var(--color-gray-light);
+    width: 100%;
+    max-width: 760px;
+    margin: 0 auto;
     padding: 1.5rem 0;
+    border-top: 1px solid var(--color-gray-light);
 }
 
 @media only screen and (min-width: 480px) {
