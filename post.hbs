@@ -1,13 +1,9 @@
 {{!< default}}
-{{!-- The tag above means - insert everything in this file into the {body} of the default.hbs template --}}
+{{!-- Single post --}}
 
-{{!-- The main content area on the single post --}}
-<main class="main">
-
-    {{!-- Everything inside the #post tags pulls data from the page --}}
-    {{#post}}
+{{#post}}
     <article class="{{post_class}}">
-        <header class="post-header">
+        <header class="post-header container">
             <div class="post-meta">
                 {{#if featured}}
                 <span class="post-featured-badge">{{t "Featured"}}</span>
@@ -26,7 +22,7 @@
                                 {{img_url feature_image size="m" format="webp"}} 600w,
                                 {{img_url feature_image size="l" format="webp"}} 800w,
                                 {{img_url feature_image size="xl" format="webp"}} 1200w"
-                        sizes="(min-width: 850px) 760px, 100vw"
+                        sizes="(min-width: 820px) 760px, 92vw"
                         src="{{img_url feature_image size="l" format="webp"}}"
                         alt="{{#if feature_image_alt}}{{feature_image_alt}}{{/if}}"
                     />
@@ -36,82 +32,70 @@
                 </figure>
             {{/if}}
         </header>
-        {{!-- If the user has access, show post content, authors, comments --}}
-        {{#if access}}
-            <div class="post-content">
-                {{content}}
-            </div>
-            <div class="post-share">
-                <span class="post-share-title">{{t "Share this post:"}}</span>
-                <a target="_blank" href="https://twitter.com/intent/tweet?text={{encode title}}&amp;url={{url absolute="true"}}" rel="noopener">X</a>
-                <a target="_blank" href="https://www.facebook.com/sharer.php?u={{url absolute="true"}}" rel="noopener">Facebook</a>
-                <a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url={{url absolute="true"}}&amp;title={{encode title}}&amp;source={{encode @site.title}}" rel="noopener">LinkedIn</a>
-            </div>
-            <div class="author-box">
-                {{#foreach authors}}
-                    <div class="author-profile">
-                        {{#if profile_image}}
-                            <div class="author-image">
-                                <img src="{{img_url profile_image size="xs" format="webp"}}" alt="{{name}}" />
-                            </div>
-                        {{/if}}
-                        <div class="author-details">
-                            <h2 class="author-title">{{t "About"}} <a href="{{url}}">{{name}}</a></h2>
-                            {{#if bio}}
+
+        <div class="post-content">
+            {{content}}
+        </div>
+
+        <div class="post-share container">
+            <a href="#/share" class="btn">{{> "icons/share"}}{{t "Share this post"}}</a>
+        </div>
+
+        <div class="author-box container">
+            {{#foreach authors}}
+                <div class="author-profile">
+                    {{#if profile_image}}
+                      <div class="author-image">
+                          <img src="{{img_url profile_image size="xs" format="webp"}}" alt="{{name}}" />
+                      </div>
+                    {{/if}}
+                    <div class="author-details">
+                        <h2 class="author-title">{{t "About"}} <a href="{{url}}">{{name}}</a></h2>
+                        {{#if bio}}
                             <p class="author-bio">{{bio}}</p>
+                        {{/if}}
+                        <div class="author-links">
+                            {{#if location}}
+                                <span>{{location}}</span>
                             {{/if}}
-                            <div class="author-links">
-                                {{#if location}}
-                                    <span>{{location}}</span>
-                                {{/if}}
-                                {{#if website}}
-                                    <a href="{{website}}" target="_blank" rel="noopener">{{website}}</a>
-                                {{/if}}
-                                {{#if twitter}}
-                                    <a href="{{social_url type="twitter"}}" target="_blank" rel="noopener" aria-label="X">{{> "icons/x"}}</a>
-                                {{/if}}
-                                {{#if facebook}}
-                                    <a href="{{social_url type="facebook"}}" target="_blank" rel="noopener" aria-label="Facebook">{{> "icons/facebook"}}</a>
-                                {{/if}}
-                                {{#if linkedin}}
-                                    <a href="{{social_url type="linkedin"}}" target="_blank" rel="noopener" aria-label="LinkedIn">{{> "icons/linkedin"}}</a>
-                                {{/if}}
-                                {{#if bluesky}}
-                                    <a href="{{social_url type="bluesky"}}" target="_blank" rel="noopener" aria-label="BlueSky">{{> "icons/bluesky"}}</a>
-                                {{/if}}
-                                {{#if threads}}
-                                    <a href="{{social_url type="threads"}}" target="_blank" rel="noopener" aria-label="Threads">{{> "icons/threads"}}</a>
-                                {{/if}}
-                                {{#if mastodon}}
-                                    <a href="{{social_url type="mastodon"}}" target="_blank" rel="noopener" aria-label="Mastodon">{{> "icons/mastodon"}}</a>
-                                {{/if}}
-                                {{#if tiktok}}
-                                    <a href="{{social_url type="tiktok"}}" target="_blank" rel="noopener" aria-label="TikTok">{{> "icons/tiktok"}}</a>
-                                {{/if}}
-                                {{#if youtube}}
-                                    <a href="{{social_url type="youtube"}}" target="_blank" rel="noopener" aria-label="YouTube">{{> "icons/youtube"}}</a>
-                                {{/if}}
-                                {{#if instagram}}
-                                    <a href="{{social_url type="instagram"}}" target="_blank" rel="noopener" aria-label="Instagram">{{> "icons/instagram"}}</a>
-                                {{/if}}
-                            </div>
+                            {{#if website}}
+                                <a href="{{website}}" target="_blank" rel="noopener">{{website}}</a>
+                            {{/if}}
+                            {{#if twitter}}
+                                <a href="{{social_url type="twitter"}}" class="btn btn-icon btn-link" target="_blank" rel="noopener" aria-label="X">{{> "icons/x"}}</a>
+                            {{/if}}
+                            {{#if facebook}}
+                                <a href="{{social_url type="facebook"}}" class="btn btn-icon btn-link" target="_blank" rel="noopener" aria-label="Facebook">{{> "icons/facebook"}}</a>
+                            {{/if}}
+                            {{#if linkedin}}
+                                <a href="{{social_url type="linkedin"}}" class="btn btn-icon btn-link" target="_blank" rel="noopener" aria-label="LinkedIn">{{> "icons/linkedin"}}</a>
+                            {{/if}}
+                            {{#if bluesky}}
+                                <a href="{{social_url type="bluesky"}}" class="btn btn-icon btn-link" target="_blank" rel="noopener" aria-label="BlueSky">{{> "icons/bluesky"}}</a>
+                            {{/if}}
+                            {{#if threads}}
+                                <a href="{{social_url type="threads"}}" class="btn btn-icon btn-link" target="_blank" rel="noopener" aria-label="Threads">{{> "icons/threads"}}</a>
+                            {{/if}}
+                            {{#if mastodon}}
+                                <a href="{{social_url type="mastodon"}}" class="btn btn-icon btn-link" target="_blank" rel="noopener" aria-label="Mastodon">{{> "icons/mastodon"}}</a>
+                            {{/if}}
+                            {{#if tiktok}}
+                                <a href="{{social_url type="tiktok"}}" class="btn btn-icon btn-link" target="_blank" rel="noopener" aria-label="TikTok">{{> "icons/tiktok"}}</a>
+                            {{/if}}
+                            {{#if youtube}}
+                                <a href="{{social_url type="youtube"}}" class="btn btn-icon btn-link" target="_blank" rel="noopener" aria-label="YouTube">{{> "icons/youtube"}}</a>
+                            {{/if}}
+                            {{#if instagram}}
+                                <a href="{{social_url type="instagram"}}" class="btn btn-icon btn-link" target="_blank" rel="noopener" aria-label="Instagram">{{> "icons/instagram"}}</a>
+                            {{/if}}
                         </div>
                     </div>
-                {{/foreach}}
-            </div>
-            {{!-- If Disqus enabled, includes the Disqus comments - partials/comments-disqus.hbs --}}
-            {{#if @custom.enable_disqus}}
-                {{#if @custom.disqus_shortname}}
-                    {{> "comments-disqus"}}
-                {{/if}}
-            {{!-- If Disqus not enabled and Ghost comments enabled, include ghost comments - partials/comments.hbs --}}
-            {{else}}
-                {{#if comments}}
-                    {{> comments}}
-                {{/if}}
-            {{/if}}
-        {{/if}}
+                </div>
+            {{/foreach}}
+        </div>
     </article>
-    {{/post}}
 
-</main>
+    {{#if comments}}
+        {{> comments}}
+    {{/if}}
+{{/post}}

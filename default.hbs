@@ -1,36 +1,30 @@
 <!DOCTYPE html>
 <html lang="{{@site.locale}}">
     <head>
-        {{!-- Document Settings --}}
+        {{!-- Basic meta --}}
         <meta charset="utf-8">
-
-        {{!-- Page Meta --}}
         <title>{{meta_title}}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
         {{!-- Styles --}}
-        <link rel="stylesheet" type="text/css" href="{{asset "css/style.css"}}" />
+        <link rel="stylesheet" type="text/css" href="{{asset "css/style.min.css"}}" />
 
-        {{!-- SEO meta+structured data and other important settings --}}
+        {{!-- Outputs SEO data and other important settings --}}
         {{ghost_head}}
     </head>
-    <body id="page" class="{{body_class}}">
-        <div class="container">
-            {{!-- The tag below includes the theme header - partials/header.hbs --}}
+    <body class="{{body_class}}">
+        <div id="page" class="page">
             {{> header}}
-            {{!-- Everything else gets inserted here --}}
-            {{{body}}}
-            {{!-- The tag below includes the theme footer - partials/footer.hbs --}}
+            <main id="main" class="content">
+                {{{body}}}
+            </main>
             {{> footer}}
         </div>
 
         {{!-- Scripts --}}
-        <script src="{{asset "js/index.js"}}"></script>
-        {{#is "post, page"}}
-        <script src="{{asset "js/post.js"}}"></script>
-        {{/is}}
+        <script src="{{asset "js/index.min.js"}}"></script>
 
-        {{!-- Ghost scripts and data. Should always be the very last thing before the closing body tag --}}
+        {{!-- Outputs important scripts and data --}}
         {{ghost_foot}}
     </body>
 </html>
