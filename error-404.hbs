@@ -1,0 +1,12 @@
+{{!< default}}
+{{!-- 404 error page --}}
+
+<section class="error container">
+    <h1 class="error-title">{{t "Page not found"}}</h1>
+    <p class="error-description">
+        {{t "The page you were looking for does not exist or has been moved."}}
+    </p>
+    <p>
+        <a class="error-link" href="{{@site.url}}">{{> "icons/arrow-left"}} {{t "Back to home"}}</a>
+    </p>
+</section>

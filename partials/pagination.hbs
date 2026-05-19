@@ -1,24 +1,22 @@
-{{#if next}}
-    <nav class="pagination">
-        <a class="pagination-older" href="{{page_url next}}">
-            {{> "icons/arrow-left"}}
-            {{t "Older Posts"}}
-        </a>
-        {{#if prev}}
-            <span class="pagination-sep">//</span>
-            <a class="pagination-newer" href="{{page_url prev}}">
-                {{t "Newer Posts"}}
-                {{> "icons/arrow-right"}}
-            </a>
-        {{/if}}
-    </nav>
-{{else}}
-    {{#if prev}}
-        <nav class="pagination">
-            <a class="pagination-newer" href="{{page_url prev}}">
-                {{t "Newer Posts"}}
-                {{> "icons/arrow-right"}}
-            </a>
+{{#if pagination.pages}}
+    {{#match pagination.pages ">" 1}}
+        <nav class="pagination" aria-label="{{t "Pagination"}}">
+            {{#if next}}
+                <a class="pagination-older" href="{{page_url next}}">
+                    {{> "icons/arrow-left"}}
+                    {{t "Older Posts"}}
+                </a>
+            {{/if}}
+
+            {{#if prev}}
+                {{#if next}}
+                    <span class="pagination-sep" aria-hidden="true">//</span>
+                {{/if}}
+                <a class="pagination-newer" href="{{page_url prev}}">
+                    {{t "Newer Posts"}}
+                    {{> "icons/arrow-right"}}
+                </a>
+            {{/if}}
         </nav>
-    {{/if}}
+    {{/match}}
 {{/if}}

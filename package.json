@@ -1,80 +1,61 @@
 {
-    "name": "scriptor",
-    "description": "A minimal Ghost blogging theme for writers",
-    "demo": "https://scriptor.justgoodthemes.com/",
-    "version": "2.2.0",
-    "engines": {
-        "ghost": ">=5.0.0"
+  "name": "scriptor",
+  "description": "A minimal Ghost blogging theme for writers",
+  "demo": "https://scriptor.justgoodthemes.com/",
+  "version": "3.0.0",
+  "engines": {
+    "ghost": ">=6.0.0"
+  },
+  "license": "MIT",
+  "screenshots": {
+    "desktop": "assets/screenshot-desktop.jpg",
+    "mobile": "assets/screenshot-mobile.jpg"
+  },
+  "author": {
+    "name": "Just Good Themes",
+    "email": "hello@justgoodthemes.com",
+    "url": "https://justgoodthemes.com"
+  },
+  "keywords": [
+    "ghost",
+    "theme",
+    "ghost-theme"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JustGoodThemes/Scriptor-Ghost-Theme.git"
+  },
+  "config": {
+    "posts_per_page": 6,
+    "card_assets": {
+      "exclude": [
+        "blockquote",
+        "bookmark",
+        "gallery"
+      ]
     },
-    "license": "MIT",
-    "screenshots": {
-        "desktop": "assets/screenshot-desktop.jpg",
-        "mobile": "assets/screenshot-mobile.jpg"
+    "image_sizes": {
+      "xs": {
+        "width": 120
+      },
+      "s": {
+        "width": 400
+      },
+      "m": {
+        "width": 600
+      },
+      "l": {
+        "width": 800
+      },
+      "xl": {
+        "width": 1200
+      }
     },
-    "author": {
-        "name": "Just Good Themes",
-        "email": "hello@justgoodthemes.com",
-        "url": "https://justgoodthemes.com"
-    },
-    "keywords": [
-        "ghost",
-        "theme",
-        "ghost-theme"
-    ],
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/JustGoodThemes/Scriptor-Ghost-Theme.git"
-    },
-    "config": {
-        "posts_per_page": 6,
-        "card_assets": {
-            "exclude": [
-                "blockquote",
-                "bookmark",
-                "gallery"
-            ]
-        },
-        "image_sizes": {
-            "xs": {
-                "width": 120
-            },
-            "s": {
-                "width": 400
-            },
-            "m": {
-                "width": 600
-            },
-            "l": {
-                "width": 800
-            },
-            "xl": {
-                "width": 1200
-            }
-        },
-        "custom": {
-            "instagram_profile": {
-                "type": "text",
-                "description": "URL of your personal Instagram Profile"
-            },
-            "bluesky_profile": {
-                "type": "text",
-                "description": "URL of your personal Bluesky Profile"
-            },
-            "linkedin_profile": {
-                "type": "text",
-                "description": "URL of your personal LinkedIn Profile"
-            },
-            "enable_disqus": {
-                "type": "boolean",
-                "default": false,
-                "group": "post"
-            },
-            "disqus_shortname": {
-                "type": "text",
-                "default": "",
-                "group": "post",
-                "visibility": "enable_disqus:true"
-            }
-        }
+    "custom": {
+      "copyright_text": {
+        "type": "text",
+        "description": "Copyright text in the footer"
+      }
     }
+  }
 }
