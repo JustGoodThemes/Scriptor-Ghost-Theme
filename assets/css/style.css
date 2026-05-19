@@ -393,7 +393,7 @@ textarea {
 .content {
   flex-grow: 1;
   width: 100%;
-  padding-bottom: 3.125rem;
+  padding-bottom: 3.75rem;
 }
 
 .container {
@@ -402,8 +402,8 @@ textarea {
 }
 
 @media (min-width: 768px) {
-  .main {
-    padding-bottom: 3.5rem;
+  .content {
+    padding-bottom: 5rem;
   }
 }
 
@@ -1261,6 +1261,12 @@ p:has(.post-read-more-link) {
 
 .footer-copyright a:is(:hover, :active) {
   text-decoration-line: underline;
+}
+
+@media (min-width: 768px) {
+  .footer {
+    padding-block: 2.5rem 3.125rem;
+  }
 }
 
 @media (max-width: 960px) {
